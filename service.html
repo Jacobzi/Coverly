@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Vault</title>    
+    <link rel="stylesheet" href="service.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar Section -->
+    <section class="navbar">
+        <img src="/images/logoblack.png" class="logo" alt="Vault Logo">
+        <div class="hamburger" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <ul id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li class="account-link">
+                <a href="account.html" class="account-icon">
+                    <i class="fas fa-user-alt"></i>
+                </a>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Header Section -->
+    <section class="header-section">
+        <div class="header-icon">
+            <img src="images/medical-icon.png" alt="medical">
+        </div>
+        <h1>Protecting what matters most.</h1>
+    </section>
+
+    <div class="background-container">
+    
+        <!-- Coverage Details Section -->
+        <section class="coverage-section">
+            <h2>We've got you covered</h2>
+            <div class="coverage-cards">
+                <div class="coverage-card">
+                    <div class="icon-circle">
+                        <img src="/images/medical/accidents.png" alt="Accidents">
+                    </div>
+                    <p class="tagline">We'll cover you for accidents and sudden illnesses</p>
+                </div>
+                <div class="coverage-card">
+                    <div class="icon-circle">
+                        <img src="/images/medical/doctor.png" alt="Doctor">
+                    </div>
+                    <p class="tagline">We'll cover your doctor visits, hospital stays, and prescriptions</p>
+                </div>
+                <div class="coverage-card">
+                    <div class="icon-circle">
+                        <img src="images/medical/costs.png" alt="Costs">
+                    </div>
+                    <p class="tagline">High medical costs? We've got you covered</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Coverage Section -->
+        <section class="detailed-coverage">
+            <h2>What's covered</h2>
+            <div class="coverage-details">
+                <div class="coverage-item">
+                    <div class="icon-circle">
+                        <img src="images/medical/accidents.png" alt="Accidents">
+                    </div>
+                    <h3>Your stay</h3>
+                    <p class="tagline">In-patient hospitalization</p>
+                    <p class="limit">Up to $100,000 per case</p>
+                </div>
+                <div class="coverage-item">
+                    <div class="icon-circle">
+                        <img src="images/medical/doctor.png" alt="Doctor">
+                    </div>
+                    <h3>Your visit</h3>
+                    <p class="tagline">Out-patient diagnostic tests and doctor visits</p>
+                    <p class="limit">Up to $3,000/year</p>
+                </div>
+                <div class="coverage-item">
+                    <div class="icon-circle">
+                        <img src="images/medical/costs.png" alt="Costs">
+                    </div>
+                    <h3>Drug Prescription</h3>
+                    <p class="tagline">Emergency treatment expenses</p>
+                    <p class="limit">No confinement needed</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Suitability Section -->
+        <section class="suitability">
+            <h2>Is it for you?</h2>
+            <div class="suitability-cards">
+                <div class="suitability-card">
+                    <div class="icon-circle">
+                        <img src="images/medical/priority.png" alt="Priority">
+                    </div>
+                    <p class="tagline">Your health is your top priority</p>
+                </div>
+                <div class="suitability-card">
+                    <div class="icon-circle">
+                        <img src="images/medical/checkup.png" alt="Checkup">
+                    </div>
+                    <p class="tagline">You love regular check-ups</p>
+                </div>
+                <div class="suitability-card">
+                    <div class="icon-circle">
+                        <img src="images/medical/peace.png" alt="Peace of mind">
+                    </div>
+                    <p class="tagline">Peace of mind is essential</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Products Section -->
+        <section class="related-products">
+            <h2>Other products you may like to see</h2>
+            <div class="related-product">
+                <div class="icon-circle-2">
+                    <img src="images/car-icon.png" alt="Car Icon">
+                </div>
+                <div class="product-details">
+                    <h3 class="category">Car</h3>
+                    <p class="tagline">Hit the road, insured.</p>
+                </div>
+                <button class="buy-now-btn">Buy Now</button>
+            </div>
+        </section>
+        
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

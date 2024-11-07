@@ -1,0 +1,406 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #bcdce6 !important;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+    width: 95%;
+    margin: auto;
+    padding: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    z-index: 10;
+}
+
+.navbar ul {
+    margin-left: auto;
+}
+
+.logo {
+    width: 80px;
+    cursor: pointer;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: #000;
+    margin: 4px 0;
+}
+
+#nav-links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+    transition: max-height 0.3s ease;
+    max-height: none;
+}
+
+#nav-links.active {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #bcdce6;
+    padding: 20px 0;
+    z-index: 999;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+    position: relative;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.navbar ul li::after {
+    content: '';
+    height: 2px;
+    width: 0;
+    background: #303030;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    transition: 0.5s;
+}
+
+.navbar ul li:hover::after {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    #nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #bcdce6;
+        padding: 10px 0;
+    }
+
+    #nav-links.active {
+        display: flex;
+    }
+
+    .navbar ul li {
+        margin: 10px 0;
+    }
+
+    .account-link {
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .account-icon {
+        margin: 0 auto;
+    }
+}
+
+.account-icon {
+    background-color: #fff;
+    border: 2px solid #6ba3b3;
+    border-radius: 50%;
+    color: #6ba3b3 !important;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: all 0.3s ease;
+}
+
+.account-icon:hover {
+    background-color: #6ba3b3;
+    color: #fff !important;
+    transform: scale(1.1);
+}
+
+.account-link {
+    display: flex;
+}
+
+.account-link::after {
+    display: none;
+}
+
+.hero {
+    text-align: center;
+    width: 100%;
+    padding: 100px 20px;
+    background-color: #bcdce6;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon-container {
+    background-color: #6ba3b3;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 40px auto;
+}
+
+.icon {
+    font-size: 80px;
+}
+
+.icon i {
+    color: #bcdce6;
+}
+
+h1 {
+    margin-top: 10px;
+    font-size: 2.5rem;
+    color: #303030;
+    font-weight: 500;
+    margin-bottom: 80px;
+}
+
+.white-section {
+    background-color: #ffffff;
+    padding: 100px 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.white-section h2 {
+    font-size: 2.5rem;
+    color: #303030;
+    font-family: 'Outfit', serif;
+    margin-bottom: 20px;
+}
+
+.white-section-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 200px;
+    flex-wrap: wrap;
+}
+
+.white-section-text h2 {
+    font-size: 1.8rem;
+    color: #303030;
+    margin: 0;
+    text-align: left;
+}
+
+.white-section-text p {
+    font-size: 1.2rem;
+    color: #606060;
+    margin: 0;
+    max-width: 600px;
+    text-align: left;
+}
+
+.white-section-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 450px;
+}
+
+.mission-image {
+    width: 350px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.insurance-img {
+    width: 400px;
+    height: auto;
+    margin-top: -150px;
+    margin-bottom: -50px;
+}
+
+.why-coverly {
+    padding: 50px 20px;
+    background-color: #bcdce6;
+    display: flex;
+    justify-content: center;
+}
+
+.why-coverly-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.text-content {
+    flex: 1;
+    text-align: left;
+}
+
+.mockup-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mockup-img {
+    width: 480px;
+    height: auto;
+}
+
+.why-coverly-content h2 {
+    font-size: 2.5rem;
+    color: #303030;
+    font-family: 'Outfit', serif;
+    margin-bottom: 10px;
+}
+
+.highlight {
+    color: #6ba3b3;
+}
+
+.why-coverly-content h3 {
+    font-size: 1.8rem;
+    color: #303030;
+    font-family: 'Outfit', serif;
+    margin-bottom: 10px;
+}
+
+.why-coverly-content p {
+    font-size: 1.2rem;
+    color: #333;
+    max-width: 600px;
+    margin: 0;
+}
+
+.mission-section {
+    background-color: #f9f9f9;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mission-section-text {
+    max-width: 1200px;
+    text-align: center;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+}
+
+.mission-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.mission-section p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    font-weight: 400;
+    color: #555;
+}
+
+.mission-section img {
+    width: 400px;
+    max-width: 600px;
+    margin-top: 30px;
+    border-radius: 8px;
+}
+
+.mission-img {
+    width: 100%;
+    max-width: 550px;
+    margin-top: 20px;
+    border-radius: 12px;
+}
+
+@media (max-width: 1200px) {
+    .white-section-text {
+        gap: 100px;
+    }
+    
+    .insurance-img{
+        margin-top: -80px;
+    }
+    .white-section-content {
+        gap: 100px;
+    }
+
+    .why-coverly-content {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 992px) {
+    .why-coverly-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 576px) {
+    h1, h2, h3 {
+        font-size: 2rem;
+    }
+
+    .white-section-text p, .why-coverly-content p, .mission-section p {
+        font-size: 1rem;
+    }
+
+    .mockup-img, .insurance-img, .mission-img {
+        width: 100%;
+    }
+
+    .why-coverly-content h2, .why-coverly-content h3 {
+        text-align: center;
+    }
+
+    .white-section-content {
+        flex-direction: column;
+        gap: 50px;
+    }
+}

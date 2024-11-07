@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="aboutus.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <div class="navbar">
+        <img src="/images/logoblack.png" class="logo" alt="Vault Logo">
+        <div class="hamburger" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <ul id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li class="account-link">
+                <a href="account.html" class="account-icon">
+                    <i class="fas fa-user-alt"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="hero">
+        <div class="hero-content">
+            <div class="icon-container">
+                <div class="icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+            </div>
+            <h1>Insurance, simplified. Built around you, priced just right.</h1>
+        </div>
+    </div>
+
+    <div class="white-section">
+        <div class="white-section-text">
+            <h2>Making insurance simple, so you can focus on<br> what matters most.</h2>
+            <p>We all know insurance is a must, but let's face it—getting covered can be frustrating. It’s rarely fast, easy, or tailored to how we actually live. But what if securing the right coverage was effortless, giving you more control and less hassle?</p>
+            <img src="/images/Insurance-bro.png" alt="Insurance Image" class="insurance-img">
+        </div>
+    </div>
+    
+    <div class="why-coverly">
+        <div class="why-coverly-content">
+            <div class="text-content">
+                <h2>That's where <span class="highlight">Coverly</span> comes in.</h2>
+                <h3>Fast, effortless, and tailored insurance - all in one place</h3>
+                <p>Insurance shouldn't be complicated or time-consuming. At <strong>Coverly</strong>, we’ve reimagined the process to make it as easy as possible. Whether you’re protecting your home, car, or business, we offer coverage that’s fast, straightforward, and designed to fit your lifestyle. With just a few clicks, you’ll get exactly what you need—without the headaches, hidden fees, or unnecessary extras.</p>    
+            </div>
+            <div class="mockup-content">
+                <img src="/images/security.png" alt="Mockup Image" class="mockup-img">
+            </div>
+        </div>
+    </div>
+
+    <div class="mission-section">
+        <div class="mission-section-text">
+            <h2>Our Mission</h2>
+            <p>At Coverly, our mission is to empower individuals and businesses with insurance solutions that truly meet their needs. We aim to simplify the insurance process, making it transparent, accessible, and convenient for everyone. By leveraging innovative technology and customer-centric service, we ensure that you can focus on living your life, while we take care of the protection.</p>
+            <img src="/images/mission.png" alt="Our Mission Image" class="mission-img">
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>

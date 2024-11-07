@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Vault</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .contact-button img {
+            width: 24px;
+            height: 24px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <img src="/images/logoblack.png" class="logo" alt="Vault Logo">
+    <div class="hamburger" onclick="toggleMenu()">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+    <ul id="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li class="account-link">
+            <a href="account.html" class="account-icon">
+                <i class="fas fa-user-alt"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<div class="content">
+    <h1>Insurance, Simplified for You</h1>
+    <p>Tailored coverage for every part of your life, delivered without the hassle.</p>
+    <div>
+        <button class="get-str-btn">Get Started</button>
+    </div>
+</div>
+
+<div class="services">
+    <h1>Featured Services</h1>
+    <div class="service-wrapper">
+        <div class="services-box">
+            <div class="icon-container">
+                <img src="/images/travel-icon.png" alt="Travel Icon" class="icon">
+            </div>
+            <h3 class="category">Travel</h3>
+            <p class="tagline">Explore the world, insured every step.</p>
+            <button class="buy-now-btn">Buy Now</button>
+        </div>
+        <div class="services-box">
+            <div class="icon-container">
+                <img src="/images/car-icon.png" alt="Car Icon" class="icon">
+            </div>
+            <h3 class="category">Car</h3>
+            <p class="tagline">Stay covered, wherever the road takes you.</p>
+            <button class="buy-now-btn">Buy Now</button>
+        </div>
+        <div class="services-box">
+            <div class="icon-container">
+                <img src="/images/medical-icon.png" alt="Medical Icon" class="icon">
+            </div>
+            <h3 class="category">Medical</h3>
+            <p class="tagline">Guard your health, protect your peace.</p>
+            <button class="buy-now-btn">Buy Now</button>
+        </div>
+        <div class="services-box">
+            <div class="icon-container">
+                <img src="/images/student-icon.png" alt="Student Icon" class="icon">
+            </div>
+            <h3 class="category">Home</h3>
+            <p class="tagline">Study abroad, fully and confidently insured.</p>
+            <button class="buy-now-btn">Buy Now</button>
+        </div>
+    </div>
+    <div class="explore-all-container">
+        <button class="explore-all-btn">Explore All</button>
+    </div>
+</div>
+
+<div class="whitespace">
+    <div class="whitespace-title">
+        <h2>About Us</h2>
+    </div>
+    <div class="whitespace-content">
+        <div class="whitespace-text">
+            <p>At Coverly, we make insurance seamless, flexible, and personal. Understanding that everyone’s needs are unique—from health and car coverage to travel and study abroad—we prioritize transparency and simplicity. With Coverly, you get the coverage you need without the hassle, so you can focus on what matters, knowing you’re protected at every turn. Live boldly with Coverly by your side.</p>
+        </div>
+        <div class="whitespace-image">
+            <img src="/images/homepage.png" alt="Insurance Image" class="insurance-image">
+        </div>
+    </div>
+</div>
+
+<div class="testimonial-section">
+    <h2>Testimonials</h2>
+    <p class="subtitle">What Our Clients Say</p>
+
+    <!-- Testimonials -->
+    <div id="testimonial1" class="testimonial-text active">
+        <p>I was overwhelmed with the complexities of health insurance, but Coverly made it easy to understand and tailored a plan that fit my needs perfectly. I can finally feel secure about my health coverage.</p>
+        <p class="author">LIAM HARTMAN  <span class="author-company">Freelancer</span></p>
+    </div>
+
+    <div id="testimonial2" class="testimonial-text">
+        <p>Coverly saved me so much time and hassle when I needed coverage for my car and travel insurance. The process was straightforward, and now I know I'm protected whether I'm on the road or traveling abroad.</p>
+        <p class="author">JANE DOE  <span class="author-company">Digital Nomad</span></p>
+    </div>
+
+    <div id="testimonial3" class="testimonial-text">
+        <p>Starting my new business was stressful, but Coverly gave me peace of mind with customized insurance options. I can focus on my business, knowing that I'm fully protected without the usual red tape.</p>
+        <p class="author">JOHN SMITH  <span class="author-company">Small Business Owner</span></p>
+    </div>
+
+    <!-- Profile Pictures -->
+    <div class="profile-pics">
+        <img src="/images/liam1.png" alt="Liam" onclick="showTestimonial(1)" class="active">
+        <img src="/images/jane.png" alt="Jane" onclick="showTestimonial(2)">
+        <img src="/images/john.png" alt="John" onclick="showTestimonial(3)">
+    </div>
+</div>
+
+<div class="contact-button" onclick="openEmail()">
+    <img src="/images/message-icon.png" alt="Message Icon">
+</div>
+
+<div id="scrollToTopButton" class="scroll-button">
+    <i class="fas fa-arrow-up"></i>
+</div>
+
+<script>
+    function toggleMenu() {
+        const navLinks = document.getElementById("nav-links");
+        navLinks.classList.toggle("active");
+    }
+
+    function openEmail() {
+        const email = "jacobzino9@gmail.com";
+        const subject = encodeURIComponent("Subject Text Here");
+        const body = encodeURIComponent("Message Body Here");
+        window.location.href = 'mailto:${email}?subject=${subject}&body=${body}';
+    }
+
+    window.addEventListener('resize', function() {
+        const navLinks = document.getElementById("nav-links");
+        if (window.innerWidth > 768) {
+            navLinks.classList.remove("active");
+        }
+    });
+
+    document.querySelector('.contact-button').addEventListener('click', function() {
+        console.log('Contact button clicked.');
+    });
+
+    const scrollToTopButton = document.getElementById("scrollToTopButton");
+
+    function updateScrollProgress() {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = (scrollTop / docHeight) * 360;
+
+        scrollToTopButton.style.background = `conic-gradient(#6ba3b3 ${scrollPercent}deg, white ${scrollPercent}deg)`;
+
+        if (scrollTop > 100) {
+            scrollToTopButton.style.display = "flex";
+        } else {
+            scrollToTopButton.style.display = "none";
+        }
+    }
+
+    window.addEventListener("scroll", updateScrollProgress);
+
+    scrollToTopButton.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    function showTestimonial(num) {
+    // Hide all testimonials
+    document.querySelectorAll('.testimonial-text').forEach(function(item) {
+        item.classList.remove('active');
+    });
+
+    // Remove active and move-up classes from all images
+    document.querySelectorAll('.profile-pics img').forEach(function(img) {
+        img.classList.remove('active', 'move-up');
+    });
+
+    // Show the selected testimonial
+    document.getElementById('testimonial' + num).classList.add('active');
+
+    // Add active and move-up classes to the selected image
+    const selectedImage = document.querySelectorAll('.profile-pics img')[num - 1];
+    selectedImage.classList.add('active', 'move-up');
+}
+
+
+</script>
+
+</body>
+</html>

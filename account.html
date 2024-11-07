@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="account.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <title>Account Page</title>
+</head>
+<body>
+<div class="navbar">
+    <button class="back-button" onclick="window.location.href='index.html';">
+        <i class="fas fa-arrow-left"></i>
+    </button>
+</div>
+
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form>
+                <h1>Create Account</h1>
+                <div class="social-icons">
+                    <a href="#" class="icon-2">
+                        <i class="fa-brands fa-google"></i>
+                    </a>
+                    <a href="#" class="icon-2">
+                        <i class="fa-brands fa-apple"></i>
+                    </a>
+                    <a href="#" class="icon-2">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="#" class="icon-2">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                </div>
+                <span>or use your email for registration</span>
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <button>Sign Up</button>
+            </form>
+        </div>
+        <div class="form-container sign-in">
+            <form>
+                <h1>Sign In</h1>
+                <div class="social-icons">
+                    <a href="#" class="icon-2">
+                        <i class="fa-brands fa-google"></i>
+                    </a>
+                    <a href="#" class="icon-2">
+                        <i class="fa-brands fa-apple"></i>
+                    </a>
+                    <a href="#" class="icon-2">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="#" class="icon-2">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                </div>
+                <span>or use your email password</span>
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <a href="#">Forget Your Password?</a>
+                <button>Sign In</button>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Welcome Back!</h1>
+                    <p>Let’s pick up where we left off and keep you covered.</p>
+                    <button class="hidden" id="login">Sign In</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Welcome, Friend!</h1>
+                    <p>We’re here to protect what matters most. Let’s get started!</p>
+                    <button class="hidden" id="register">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>

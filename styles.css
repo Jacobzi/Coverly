@@ -1,0 +1,640 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+    background-color: #bcdce6 !important;
+}
+
+.navbar {
+    width: 95%;
+    margin: auto;
+    padding: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    z-index: 10;
+}
+
+.navbar ul {
+    margin-left: auto;
+}
+
+.logo {
+    width: 80px;
+    cursor: pointer;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: #000;
+    margin: 4px 0;
+}
+
+#nav-links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+    transition: max-height 0.3s ease;
+    max-height: none;
+}
+
+#nav-links.active {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #bcdce6;
+    padding: 20px 0;
+    z-index: 999;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+    position: relative;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.navbar ul li::after {
+    content: '';
+    height: 2px;
+    width: 0;
+    background: #303030;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    transition: 0.5s;
+}
+
+.navbar ul li:hover::after {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    #nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #bcdce6;
+        padding: 10px 0;
+    }
+
+    #nav-links.active {
+        display: flex;
+    }
+
+    .navbar ul li {
+        margin: 10px 0;
+    }
+
+    .account-link {
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .account-icon {
+        margin: 0 auto;
+    }
+}
+
+.content {
+    width: 100%;
+    position: relative;
+    top: 10%;
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.content h1 {
+    color: #333;
+    font-size: 56px;
+    margin-top: 130px;
+    font-family: 'Outfit', serif;
+    margin-bottom: 5px;
+}
+
+.content p {
+    margin: 0 auto 15px;
+    font-weight: 350;
+    line-height: 1.6;
+    font-size: 20px;
+    max-width: 600px;
+    color: #000;
+}
+
+.get-str-btn {
+    width: 200px;
+    padding: 15px;
+    margin: 25px 10px;
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    border-color: #6ba3b3;
+    border-width: 2px;
+    border-radius: 25px;
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.get-str-btn:hover {
+    background-color: #6ba3b3;
+    color: white;
+    transform: scale(1.05);
+}
+
+.services {
+    background-color: #bcdce6;
+    text-align: center;
+    padding: 50px;
+    margin-top: 100px;
+}
+
+.service-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.services h1 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #333;
+    font-family: 'Outfit', serif;
+}
+
+.services-box {
+    width: 300px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    text-align: center;
+    min-height: 390px;
+}
+
+.services-box:hover{
+    border: #6ba3b3 solid 3px;
+    cursor: pointer;
+    padding: 1.25%;
+}
+
+.icon-container {
+    background-color: #bcdce6;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 40px auto;
+}
+
+.icon {
+    width: 50px;
+    height: auto;
+}
+
+.category {
+    font-family: Outfit, sans-serif;
+    font-size: 1.4em;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.tagline {
+    font-family: Poppins, sans-serif;
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.buy-now-btn {
+    padding: 10px 20px;
+    border: 2px solid #6ba3b3;
+    border-radius: 25px;
+    background-color: #ffffff;
+    color: #6ba3b3;
+    font-size: 1em;
+    cursor: pointer;
+    transition: border-width 0.1s ease-in-out;
+    margin-top: 10px;
+}
+
+.buy-now-btn:hover {
+    border-width: 4px;
+    background-color: transparent;
+}
+
+.explore-all-container {
+    width: 100%;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.explore-all-btn {
+    width: 200px;
+    padding: 15px;
+    margin-top: -20px;
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
+    border-color: #6ba3b3;
+    border-width: 2px;
+    border-radius: 25px;
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.explore-all-btn:hover {
+    background-color: #6ba3b3;
+    color: white;
+    transform: scale(1.05);
+}
+
+.whitespace {
+    padding: 50px 50px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.whitespace-title {
+    text-align: center;
+    margin-bottom: 70px;
+    margin-top: -15px;
+}
+
+.whitespace-title h2 {
+    font-size: 36px;
+    color: #333;
+    font-family: 'Outfit', serif;
+}
+
+.whitespace-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1350px;
+    height: 300px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
+.whitespace-text {
+    flex: 1;
+    max-width: 600px;
+    text-align: left;
+}
+
+.whitespace-text p {
+    font-size: 20px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.whitespace-image {
+    flex: 1;
+    text-align: right;
+}
+
+.insurance-image {
+    width: 390px;
+    height: auto;
+    border-radius: 10px;
+}
+
+@media (max-width:900px) and (min-width: 768px){
+    .whitespace-text p{
+        font-size: 18px;
+    }
+
+    .insurance-image{
+        width: 290px;
+    }
+}
+
+.testimonial-section {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 25px;
+}
+.testimonial-section h2 {
+    font-size: 36px;
+    color: #333;
+    font-family: 'Outfit', serif;
+}
+
+.testimonial-section p.subtitle {
+    color: #666;
+    font-style: none;
+    margin: 5px 0 20px;
+}
+
+.testimonial-text {
+    font-size: 20px;
+    color: #555;
+    line-height: 1.6;
+    display: none;
+}
+
+.testimonial-text.active {
+    display: block;
+}
+
+.author {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.author-company {
+    color: #6ba3b3;
+}
+
+.profile-pics {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.profile-pics img {
+    width: 85px;
+    height: 85px;
+    border-radius: 100%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform 0.3s ease, border-color 0.3s;
+}
+
+.profile-pics img:hover {
+    transform: scale(1.1);
+    border-color: #6ba3b3;
+}
+.profile-pics img.move-up {
+    transform: translateY(-10px);
+}
+
+@media (max-width: 768px) {
+    .content h1 {
+        font-size: 40px;
+    }
+
+    button {
+        width: 180px;
+        padding: 12px;
+    }
+
+    .whitespace-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .whitespace-text {
+        text-align: center;
+    }
+
+    .whitespace-text p {
+        font-size: 16px;
+    }
+
+    .whitespace-image {
+        margin-top: 20px;
+        width: 10px;
+        height: 1px;
+    }
+}
+
+@media (max-width: 480px) {
+    .content h1 {
+        font-size: 28px;
+    }
+
+    .content p {
+        font-size: 14px;
+    }
+
+    button {
+        width: 160px;
+        padding: 10px;
+    }
+
+    .whitespace-title h2 {
+        font-size: 22px;
+    }
+
+    .whitespace-text p {
+        font-size: 16px;
+    }
+}
+
+.contact-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #90C3D6;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.contact-button:hover {
+    background-color: #6ba3b3;
+}
+
+.contact-button i {
+    font-size: 24px;
+}
+
+.contact-button img {
+    width: 24px;
+    height: 24px;
+}
+
+.scroll-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: conic-gradient(#6ba3b3 0deg, #6ba3b3 0deg, transparent 0deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 6px;
+    box-sizing: border-box;
+}
+
+.scroll-button i {
+    font-size: 24px;
+    color: #333;
+    background-color: #fff;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll-button:hover {
+    transform: scale(1.1);
+}
+
+.account-icon {
+    background-color: #fff;
+    border: 2px solid #6ba3b3;
+    border-radius: 50%;
+    color: #6ba3b3 !important;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: all 0.3s ease;
+}
+
+.account-icon:hover {
+    background-color: #6ba3b3;
+    color: #fff !important;
+    transform: scale(1.1);
+}
+
+.account-link {
+    display: flex;
+}
+
+.account-link::after {
+    display: none;
+}
+
+/* Responsive Adjustments for better layout on iPhone 14 Pro Max */
+@media (max-width: 900px) {
+    /* Navbar */
+    .hamburger {
+        display: flex;
+    }
+
+    #nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #bcdce6;
+        padding: 10px 0;
+    }
+
+    #nav-links.active {
+        display: flex;
+    }
+
+    .navbar ul li {
+        margin: 10px 0;
+    }
+
+    /* Content Area */
+    .content h1 {
+        font-size: 34px;
+        margin-top: 100px;
+    }
+    .content p {
+        font-size: 18px;
+    }
+
+    /* Button Sizing */
+    .get-str-btn, .buy-now-btn, .explore-all-btn {
+        font-size: 14px;
+        padding: 10px;
+        width: 180px;
+    }
+
+    /* Service Boxes */
+    .service-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    .services-box {
+        width: 90%;
+        margin-bottom: 15px;
+    }
+
+    /* Image Scaling */
+    .icon-container {
+        width: 100px;
+        height: 100px;
+    }
+    .insurance-image {
+        width: 200px;
+        height: auto;
+    }
+    /* Contact and Scroll Buttons */
+    .contact-button, .scroll-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Whitespace Content */
+    .whitespace-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
