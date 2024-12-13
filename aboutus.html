@@ -12,7 +12,9 @@
 </head>
 <body>
     <div class="navbar">
-        <img src="/images/logoblack.png" class="logo" alt="Vault Logo">
+        <a href="index.html">
+            <img src="/images/coverlylogo1.png" class="logo" alt="Coverly Logo">
+        </a>
         <div class="hamburger" onclick="toggleMenu()">
             <div class="line"></div>
             <div class="line"></div>
@@ -30,6 +32,8 @@
         </ul>
     </div>
 
+    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
     <div class="hero">
         <div class="hero-content">
             <div class="icon-container">
@@ -43,9 +47,11 @@
 
     <div class="white-section">
         <div class="white-section-text">
-            <h2>Making insurance simple, so you can focus on<br> what matters most.</h2>
+            <h2>Making insurance simple, so you can focus on what matters most.</h2>
             <p>We all know insurance is a must, but let's face it—getting covered can be frustrating. It’s rarely fast, easy, or tailored to how we actually live. But what if securing the right coverage was effortless, giving you more control and less hassle?</p>
-            <img src="/images/Insurance-bro.png" alt="Insurance Image" class="insurance-img">
+            <div class="white-mockup">
+                <img src="/images/Insurance-bro.png" alt="Insurance Image" class="insurance-img">
+            </div>
         </div>
     </div>
     
@@ -70,12 +76,69 @@
         </div>
     </div>
 
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>About Coverly</h3>
+                <p>Coverly Insurance Company offers comprehensive coverage options to protect what matters most to you. Our mission is to provide reliable, affordable, and personalized insurance solutions.</p>
+            </div>
+    
+            <div class="footer-section links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-section contact">
+                <h4>Contact Us</h4>
+                <p>Email: support@coverly.com</p>
+                <p>Phone: +961 76 542-112</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            &copy; 2024 Coverly | All rights reserved.
+        </div>
+    </footer>
+
     <script>
         function toggleMenu() {
-            const navLinks = document.getElementById('nav-links');
-            navLinks.classList.toggle('active');
+            const navLinks = document.getElementById("nav-links");
+            const hamburger = document.querySelector(".hamburger");
+            const overlay = document.getElementById("overlay");
+            navLinks.classList.toggle("active");
+            hamburger.classList.toggle("active");
+            overlay.classList.toggle("active");
+            document.body.classList.toggle("menu-active");
+
+            // Update aria-expanded for accessibility
+            const isExpanded = hamburger.classList.contains("active");
+            hamburger.setAttribute("aria-expanded", isExpanded);
         }
+
+        // Close menu when a navigation link is clicked
+        document.querySelectorAll('#nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                const navLinks = document.getElementById("nav-links");
+                const hamburger = document.querySelector(".hamburger");
+                const overlay = document.getElementById("overlay");
+                navLinks.classList.remove("active");
+                hamburger.classList.remove("active");
+                overlay.classList.remove("active");
+                document.body.classList.remove("menu-active");
+            });
+        });
     </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

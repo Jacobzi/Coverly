@@ -1,99 +1,108 @@
-/* General Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
 }
 
 body {
-    overflow-x: hidden;
     font-family: 'Poppins', sans-serif;
     background-color: #bcdce6 !important;
+    color: #333;
 }
 
+h1, h2, h3, h4, h5, h6, p, a, li, span {
+    font-family: 'Outfit', sans-serif;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+
+/* Navbar */
 .navbar {
-    width: 95%;
-    margin: auto;
-    padding: 1%;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
-    z-index: 10;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #bcdce6;
+    width: 100%;
+    box-sizing: border-box;
+    position: fixed; /* Make navbar fixed to the top */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure navbar is above other elements */
 }
 
-.navbar ul {
-    margin-left: auto;
+.navbar .logo {
+    width: 85px;
+    height: auto;
 }
 
-.logo {
-    width: 80px;
-    cursor: pointer;
+.navbar #nav-links {
+    display: flex;
+    list-style: none;
 }
 
-.hamburger {
+.navbar #nav-links li {
+    margin: 0 15px;
+}
+
+.navbar #nav-links a {
+    color: #333;
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar #nav-links a:hover {
+    color: #6ba3b3;
+}
+
+.navbar .hamburger {
     display: none;
-    flex-direction: column;
     cursor: pointer;
+    flex-direction: column;
+    gap: 4px;
 }
 
-.hamburger .line {
+.navbar .hamburger .line {
     width: 25px;
     height: 3px;
-    background-color: #000;
-    margin: 4px 0;
+    background-color: #333;
+    transition: all 0.3s ease;
 }
 
-#nav-links {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    list-style: none;
-    transition: max-height 0.3s ease;
-    max-height: none;
+/* Hamburger Animation */
+.navbar .hamburger.active .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
 }
 
-#nav-links.active {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background-color: #bcdce6;
-    padding: 20px 0;
-    z-index: 999;
+.navbar .hamburger.active .line:nth-child(2) {
+    opacity: 0;
 }
 
-.navbar ul li {
-    margin: 0 15px;
-    position: relative;
-    font-weight: 500;
-    font-size: 1.1rem;
+.navbar .hamburger.active .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
 }
 
-.navbar ul li a {
-    text-decoration: none;
-    color: #000;
-    text-transform: uppercase;
-    position: relative;
-}
-
-.navbar ul li::after {
-    content: '';
-    height: 2px;
-    width: 0;
-    background: #303030;
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-    transition: 0.5s;
-}
-
-.navbar ul li:hover::after {
-    width: 100%;
+.navbar .account-link a {
+    font-size: 20px;
 }
 
 .account-icon {
@@ -108,7 +117,6 @@ body {
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    margin-left: 20px;
     transition: all 0.3s ease;
 }
 
@@ -127,35 +135,81 @@ body {
 }
 
 @media (max-width: 768px) {
-    .hamburger {
-        display: flex;
-    }
-
-    #nav-links {
-        display: none;
+    .navbar #nav-links {
         flex-direction: column;
-        width: 100%;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 40%;
         background-color: #bcdce6;
-        padding: 10px 0;
+        padding-top: 80px; /* Space for navbar */
+        padding-left: 20px;
+        padding-right: 20px;
+        box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+        transition: right 0.3s ease-in-out;
+        z-index: 998;
     }
 
+    /* When #nav-links is active, show it */
     #nav-links.active {
+        right: 0;
         display: flex;
     }
 
-    .navbar ul li {
-        margin: 10px 0;
+    .navbar #nav-links li a {
+        color: #fff;
+        font-size: 18px;
+        margin: 50px 0;
+        text-transform: uppercase;
     }
 
-    .account-link {
-        display: block;
-        text-align: center;
-        margin-top: 20px;
+    .navbar #nav-links li a:hover {
+        color: #6ba3b3;
     }
 
-    .account-icon {
+    .navbar .hamburger {
+        display: flex;
+    }
+
+    /* Prevent scrolling when menu is active */
+    body.menu-active {
+        overflow: hidden;
+    }
+
+    /* Adjust card layout on tablets for uniform size and centering */
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    /* Increase the maximum width for boxes at 768px */
+    .card {
+        width: 90%;
+        max-width: 400px; /* Increased from 350px to 400px for wider boxes */
         margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
+}
+
+/* Overlay Styles */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 997;
+    transition: opacity 0.3s ease;
+}
+
+.overlay.active {
+    display: block;
 }
 
 .header-section {
@@ -190,26 +244,26 @@ body {
     padding: 20px;
 }
 
-.health-insurance-section, .liability-section, .cyber-section{
+.health-insurance-section, .liability-section {
     text-align: center;
     padding: 40px 20px;
     background-color: #f7f9fa;
 }
 
-.motor-insurance-section, .homeowners-section{
+.motor-insurance-section, .homeowners-section {
     text-align: center;
     padding: 40px 20px;
     background-color: #bcdce6;
 }
 
-.liability-section h2, .motor-insurance-section h2, .health-insurance-section h2, .homeowners-section h2, .cyber-section h2 {
+.liability-section h2, .motor-insurance-section h2, .health-insurance-section h2, .homeowners-section h2 {
     font-size: 36px;
     color: #333;
     margin-bottom: 30px;
     font-family: 'Outfit', serif;
 }
 
-.liability-section h2::after, .motor-insurance-section h2::after, .health-insurance-section h2::after, .homeowners-section h2::after, .cyber-section h2::after {
+.liability-section h2::after, .motor-insurance-section h2::after, .health-insurance-section h2::after, .homeowners-section h2::after {
     content: "";
     display: block;
     width: 40px;
@@ -237,12 +291,13 @@ body {
     position: relative;
     text-align: center;
     min-height: 390px;
+    transition: transform 0.3s ease;
 }
 
 .card:hover {
     border: #6ba3b3 solid 3px;
     cursor: pointer;
-    padding: 1.2%;
+    transform: scale(1.05);
 }
 
 .icon-circle {
@@ -290,6 +345,94 @@ body {
     background-color: transparent;
 }
 
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.card-link:hover .card {
+    transform: none;
+    padding: 6%;
+}
+
+.footer {
+    background-color: #fafdfd;
+    color: #000;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 150px;
+    margin: 5px 10px;
+}
+
+.footer-section h3, .footer-section h4 {
+    font-family: Outfit, sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    font-family: Poppins, sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 8px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    font-family: Poppins, sans-serif;
+    color: #000;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #333;
+}
+
+.footer-section .social-icons a {
+    color: #000;
+    font-size: 1rem;
+    margin: 0 8px;
+    display: inline-block;
+    transition: color 0.3s;
+}
+
+.footer-section .social-icons a:hover {
+    color: #333;
+}
+
+.footer-bottom {
+    font-family: Outfit, sans-serif;
+    background-color: #eaeaea;
+    color: #000;
+    padding: 10px;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
 /* Responsive Adjustments for Services */
 @media (max-width: 900px) {
     .card-container {
@@ -305,4 +448,90 @@ body {
         width: 100px;
         height: 100px;
     }
+
+    /* Slightly reduce heading sizes to prevent overflow */
+    .liability-section h2,
+    .motor-insurance-section h2,
+    .health-insurance-section h2,
+    .homeowners-section h2 {
+        font-size: 32px;
+    }
+
+    .buy-now-btn {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Reduce the header section's top padding to ensure good fit */
+    .header-section {
+        padding: 120px 20px;
+    }
+
+    .header-section h1 {
+        font-size: 2rem;
+        margin-bottom: 60px;
+    }
+
+    .category {
+        font-size: 1.2em;
+    }
+
+    .tagline {
+        font-size: 1em;
+    }
+
+    /* Reduce horizontal padding in the white section text */
+    .white-section-text p {
+        padding: 0 20px;
+    }
+
+    .liability-section h2,
+    .motor-insurance-section h2,
+    .health-insurance-section h2,
+    .homeowners-section h2 {
+        font-size: 28px;
+    }
+
+    .card {
+        width: 500px;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-section h1 {
+        font-size: 1.8rem;
+    }
+
+    img, .icon-circle img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .buy-now-btn {
+        margin-left: 10px;
+        margin-right: 10px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 500px) {
+    .card{
+        width: 300px;
+    }
+}
+
+@media (max-width: 360px){
+    .card{
+        width: 250px;
+    }
+}
+
+.health-insurance-section,
+.liability-section,
+.motor-insurance-section,
+.homeowners-section {
+    position: relative; /* Add this line to contain the ::after pseudo-elements */
 }

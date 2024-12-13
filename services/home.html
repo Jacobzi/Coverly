@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Vault</title>    
+    <link rel="stylesheet" href="service.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<section class="navbar">
+    <!-- Logo is now clickable, linking back to home page -->
+    <a href="../index.html">
+        <img src="/images/coverlylogo1.png" class="logo" alt="Vault Logo">
+    </a>
+    <div class="hamburger" onclick="toggleMenu()">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+    <ul id="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../services.html">Services</a></li>
+        <li><a href="../aboutus.html">About Us</a></li>
+        <li class="account-link">
+            <a href="../account.html" class="account-icon">
+                <i class="fas fa-user-alt"></i>
+            </a>
+        </li>
+    </ul>
+</section>
+
+<div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+
+<section class="header-section">
+        <div class="header-icon">
+            <img src="/images/home.png" alt="Home">
+        </div>
+        <h1>Home secured, peace assured</h1>
+        <div>
+            <button class="buy" onclick="location.href='../buynow/bnhome.html'">Buy This Product</button>
+        </div>
+    </section>
+
+    <div class="background-container">
+    
+        <section class="coverage-section">
+            <h2>We've got you covered</h2>
+            <div class="coverage-cards">
+                <div class="coverage-card">
+                    <div class="icon-circle">
+                        <img src="/images/home/damage1.png" alt="damage1">
+                    </div>
+                    <p class="tagline">Repairs or rebuilding costs after damage from fire, storms, and more.</p>
+                </div>
+                <div class="coverage-card">
+                    <div class="icon-circle">
+                        <img src="/images/home/electronics.png" alt="electronics">
+                    </div>
+                    <p class="tagline">Protection for stolen or damaged items like furniture and electronics.</p>
+                </div>
+                <div class="coverage-card">
+                    <div class="icon-circle">
+                        <img src="/images/home/injury1.png" alt="injury1">
+                    </div>
+                    <p class="tagline">Coverage if someone is injured on your property.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="detailed-coverage">
+            <h2>What's covered</h2>
+            <div class="coverage-details">
+                <div class="coverage-item">
+                    <div class="icon-circle">
+                        <img src="/images/home/damage1.png" alt="damage1">
+                    </div>
+                    <h3>Property Damage</h3>
+                    <p class="tagline">Covers repairs or rebuilding from events like fire or storms.</p>
+                    <p class="limit">Up to $500,000 per claim</p>
+                </div>
+                <div class="coverage-item">
+                    <div class="icon-circle">
+                        <img src="/images/home/electronics.png" alt="electronics">
+                    </div>
+                    <h3>Personal Belongings</h3>
+                    <p class="tagline">Protects items like furniture and electronics if stolen or damaged.</p>
+                    <p class="limit">Up to $100,000 per claim</p>
+                </div>
+                <div class="coverage-item">
+                    <div class="icon-circle">
+                        <img src="/images/home/injury1.png" alt="injury1">
+                    </div>
+                    <h3>Liability Protection</h3>
+                    <p class="tagline">Covers injuries on your property.</p>
+                    <p class="limit">Up to $300,000 per claim</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="suitability">
+            <h2>Is it for you?</h2>
+            <div class="suitability-cards">
+                <div class="suitability-card">
+                    <div class="icon-circle">
+                        <img src="/images/home/mind.png" alt="mind">
+                    </div>
+                    <p class="tagline">You value peace of mind.</p>
+                </div>
+                <div class="suitability-card">
+                    <div class="icon-circle">
+                        <img src="/images/home/fsec.png" alt="security">
+                    </div>
+                    <p class="tagline">You want financial security.</p>
+                </div>
+                <div class="suitability-card">
+                    <div class="icon-circle">
+                        <img src="/images/home/home.png" alt="home">
+                    </div>
+                    <p class="tagline">Your home is your sanctuary.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-products">
+            <h2>Other products you may like to see</h2>
+            <div class="related-product">
+                <div class="icon-circle-2">
+                    <img src="/images/condo.png" alt="Condo">
+                </div>
+                <div class="product-details">
+                    <h3 class="category">Condo</h3>
+                    <p class="tagline">Condo protected, <br>peace assured.</p>
+                </div>
+                <button class="buy-now-btn">Buy Now</button>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>About Coverly</h3>
+                <p>Coverly Insurance Company offers comprehensive coverage options to protect what matters most to you. Our mission is to provide reliable, affordable, and personalized insurance solutions.</p>
+            </div>
+    
+            <div class="footer-section links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../services.html">Services</a></li>
+                    <li><a href="../aboutus.html">About Us</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-section contact">
+                <h4>Contact Us</h4>
+                <p>Email: support@coverly.com</p>
+                <p>Phone: +961 76 542-112</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            &copy; 2024 Coverly | All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById("nav-links");
+            const hamburger = document.querySelector(".hamburger");
+            const overlay = document.getElementById("overlay");
+            navLinks.classList.toggle("active");
+            hamburger.classList.toggle("active");
+            overlay.classList.toggle("active");
+            document.body.classList.toggle("menu-active");
+
+            // Update aria-expanded for accessibility
+            const isExpanded = hamburger.classList.contains("active");
+            hamburger.setAttribute("aria-expanded", isExpanded);
+        }
+
+        // Close menu when a navigation link is clicked
+        document.querySelectorAll('#nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                const navLinks = document.getElementById("nav-links");
+                const hamburger = document.querySelector(".hamburger");
+                const overlay = document.getElementById("overlay");
+                navLinks.classList.remove("active");
+                hamburger.classList.remove("active");
+                overlay.classList.remove("active");
+                document.body.classList.remove("menu-active");
+            });
+        });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

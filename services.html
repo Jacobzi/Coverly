@@ -3,228 +3,293 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <title>Vault</title>    
+    <title>Coverly</title>
     <link rel="stylesheet" href="services.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <!-- Bootstrap CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    
-    <!-- Navbar Section -->
-    <section class="navbar">
-        <img src="/images/logoblack.png" class="logo" alt="Vault Logo">
-        <div class="hamburger" onclick="toggleMenu()">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-        </div>
-        <ul id="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="aboutus.html">About Us</a></li>
-            <li class="account-link">
-                <a href="account.html" class="account-icon">
-                    <i class="fas fa-user-alt"></i>
-                </a>
-            </li>
-        </ul>
-    </section>
 
-    <!-- Header Section -->
-    <section class="header-section">
-        <div class="header-icon">
-            <i class="fa-solid fa-shield-heart"></i>
-        </div>
-        <h1>Protecting what matters most.</h1>
-    </section>
+<!-- Navbar Section -->
+<section class="navbar">
+    <!-- Logo is now clickable, linking back to home page -->
+    <a href="index.html">
+        <img src="/images/coverlylogo1.png" class="logo" alt="Vault Logo">
+    </a>
+    <div class="hamburger" onclick="toggleMenu()">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+    <ul id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li class="account-link">
+            <a href="account.html" class="account-icon">
+                <i class="fas fa-user-alt"></i>
+            </a>
+        </li>
+    </ul>
+</section>
 
-    <div class="background-container">
+<div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+<!-- Header Section -->
+<section class="header-section">
+    <div class="header-icon">
+        <i class="fa-solid fa-shield-heart"></i>
+    </div>
+    <h1>Protecting what matters most.</h1>
+</section>
+
+<div class="background-container">
     <section class="health-insurance-section">
         <h2>Health Insurance</h2>
         <div class="card-container">
-            <div class="card">
-                <div class="icon-circle">
-                    <img src="/images/medical-icon.png" alt="Medical Icon">
+            <a href="services/medical.html" class="card-link">
+                <div class="card">
+                    <div class="icon-circle">
+                        <img src="/images/medical-icon.png" alt="Medical Icon">
+                    </div>
+                    <h3 class="category">Medical</h3>
+                    <p class="tagline">Stay safe, stay covered.</p>
+                    <button class="buy-now-btn" onclick="event.preventDefault(); event.stopPropagation(); location.href='buynow/bnmed.html'">Buy Now</button>
                 </div>
-                <h3 class="category">Medical</h3>
-                <p class="tagline">Hit the road, insured.</p>
-                <button class="buy-now-btn">Buy Now</button>
-            </div>
-            <div class="card">
-                <div class="icon-circle">
-                    <img src="/images/travel-icon.png" alt="Travel Icon">
+            </a>
+            <a href="services/travel.html" class="card-link">
+                <div class="card">
+                    <div class="icon-circle">
+                        <img src="/images/travel-icon.png" alt="Travel Icon">
+                    </div>
+                    <h3 class="category">Travel</h3>
+                    <p class="tagline">Covered, everywhere.</p>
+                    <button class="buy-now-btn" onclick="event.preventDefault(); event.stopPropagation(); location.href='buynow/bntravel.html'">Buy Now</button>
                 </div>
-                <h3 class="category">Travel</h3>
-                <p class="tagline">Ride on, insured.</p>
-                <button class="buy-now-btn">Buy Now</button>
-            </div>
-            <div class="card">
-                <div class="icon-circle">
-                    <img src="/images/dental.png" alt="Dental Icon">
+            </a>
+            <a href="services/dental.html" class="card-link">
+                <div class="card">
+                    <div class="icon-circle">
+                        <img src="/images/dental.png" alt="Dental Icon">
+                    </div>
+                    <h3 class="category">Dental</h3>
+                    <p class="tagline">Smile wide, covered.</p>
+                    <button class="buy-now-btn" onclick="event.preventDefault(); event.stopPropagation(); location.href='buynow/bndent.html'">Buy Now</button>
                 </div>
-                <h3 class="category">Dental</h3>
-                <p class="tagline">Full on fuel, full on coverage!</p>
-                <button class="buy-now-btn">Buy Now</button>
-            </div>
-            <div class="card">
-                <div class="icon-circle">
-                    <img src="/images/vision.png" alt="Vision Icon">
+            </a>
+            <a href="services/vision.html" class="card-link">
+                <div class="card">
+                    <div class="icon-circle">
+                        <img src="/images/vision.png" alt="Vision Icon">
+                    </div>
+                    <h3 class="category">Vision</h3>
+                    <p class="tagline">Clear and covered.</p>
+                    <button class="buy-now-btn" onclick="event.preventDefault(); event.stopPropagation(); location.href='buynow/bnvision.html'">Buy Now</button>
                 </div>
-                <h3 class="category">Vision</h3>
-                <p class="tagline">Full on fuel, full on coverage!</p>
-                <button class="buy-now-btn">Buy Now</button>
-            </div>
+            </a>
         </div>
     </section>
-    </div>
+</div>
 
-    <section class="motor-insurance-section">
-        <h2>Motor Insurance</h2>
-        <div class="card-container">
+<section class="motor-insurance-section">
+    <h2>Motor Insurance</h2>
+    <div class="card-container">
+        <a href="services/car.html" class="card-link">
             <div class="card">
                 <div class="icon-circle">
                     <img src="/images/car-icon.png" alt="Car">
                 </div>
                 <h3 class="category">Car</h3>
                 <p class="tagline">Hit the road, insured.</p>
-                <button class="buy-now-btn">Buy Now</button>
+                <button class="buy-now-btn" onclick="event.preventDefault(); event.stopPropagation(); location.href='buynow/bncar.html'">Buy Now</button>
             </div>
+        </a>
+        <a href="services/motorbike.html" class="card-link">
             <div class="card">
                 <div class="icon-circle">
                     <img src="/images/motorbike.png" alt="Motorbike">
                 </div>
                 <h3 class="category">Motorbike</h3>
                 <p class="tagline">Ride on, insured.</p>
-                <button class="buy-now-btn">Buy Now</button>
+                <button class="buy-now-btn" onclick="event.preventDefault(); event.stopPropagation(); location.href='buynow/bnmotorbike.html'">Buy Now</button>
             </div>
+        </a>
+        <a href="services/commercial.html" class="card-link">
             <div class="card">
                 <div class="icon-circle">
                     <img src="/images/commercial.png" alt="Commercial Vehicle">
                 </div>
                 <h3 class="category">Commercial Vehicle</h3>
-                <p class="tagline">Full on fuel, full on coverage!</p>
-                <button class="buy-now-btn">Buy Now</button>
+                <p class="tagline">Business covered, securely.</p>
+                <button class="buy-now-btn" onclick="event.preventDefault(); event.stopPropagation(); location.href='buynow/bncommercial.html'">Buy Now</button>
             </div>
+        </a>
+        <a href="services/allriskcar.html" class="card-link">
             <div class="card">
                 <div class="icon-circle">
                     <img src="/images/car-icon2.png" alt="All-Risk Car">
                 </div>
                 <h3 class="category">All-Risk Car</h3>
-                <p class="tagline">Full on fuel, full on coverage!</p>
-                <button class="buy-now-btn">Buy Now</button>
+                <p class="tagline">Full protection, drive assured.</p>
+                <button class="buy-now-btn" onclick="event.preventDefault(); event.stopPropagation(); location.href='buynow/bnallriskcar.html'">Buy Now</button>
             </div>
-        </div>
-    </section>
+        </a>
+    </div>
+</section>
 
-    <div class="background-container">
+<div class="background-container">
     <section class="liability-section">
         <h2>Professional Liability</h2>
         <div class="card-container">
-            <div class="card">
-                <div class="icon-circle">
-                    <img src="/images/malpractice.png" alt="Medical Malpractice">
+            <a href="services/medicalmalpractice.html" class="card-link">
+                <div class="card">
+                    <div class="icon-circle">
+                        <img src="/images/malpractice.png" alt="Medical Malpractice">
+                    </div>
+                    <h3 class="category">Medical Malpractice</h3>
+                    <p class="tagline">Save lives, insured.</p>
+                    <button class="buy-now-btn" onclick="event.preventDefault(); event.stopPropagation(); location.href='buynow/bnmedicalmalpractice.html'">Buy Now</button>
                 </div>
-                <h3 class="category">Medical Malpractice</h3>
-                <p class="tagline">Save lives, insured.</p>
-                <button class="buy-now-btn">Buy Now</button>
-            </div>
-            <div class="card">
-                <div class="icon-circle">
-                    <img src="/images/law.png" alt="Law">
+            </a>
+            <a href="services/legalmalpractice.html" class="card-link">
+                <div class="card">
+                    <div class="icon-circle">
+                        <img src="/images/law.png" alt="Law">
+                    </div>
+                    <h3 class="category">Legal Malpractice</h3>
+                    <p class="tagline">Defend wisely, insured.</p>
+                    <button class="buy-now-btn" onclick="event.preventDefault(); event.stopPropagation(); location.href='buynow/bnlegalmalpractice.html'">Buy Now</button>
                 </div>
-                <h3 class="category">Legal Malpractice</h3>
-                <p class="tagline">Work for justice, insured.</p>
-                <button class="buy-now-btn">Buy Now</button>
-            </div>
-            <div class="card">
-                <div class="icon-circle">
-                    <img src="/images/accountant.png" alt="Accountant">
+            </a>
+            <a href="services/accountant.html" class="card-link">
+                <div class="card">
+                    <div class="icon-circle">
+                        <img src="/images/accountant.png" alt="Accountant">
+                    </div>
+                    <h3 class="category">Accountant Liability</h3>
+                    <p class="tagline">Balance safely, covered.</p>
+                    <button class="buy-now-btn" onclick="event.preventDefault(); event.stopPropagation(); location.href='buynow/bnaccountant.html'">Buy Now</button>
                 </div>
-                <h3 class="category">Accountant Liability</h3>
-                <p class="tagline">Fly high, insured.</p>
-                <button class="buy-now-btn">Buy Now</button>
-            </div>
-            <div class="card">
-                <div class="icon-circle">
-                    <img src="/images/consultant.png" alt="Consultant">
+            </a>
+            <a href="services/consultant.html" class="card-link">
+                <div class="card">
+                    <div class="icon-circle">
+                        <img src="/images/consultant.png" alt="Consultant">
+                    </div>
+                    <h3 class="category">Consultant Liability</h3>
+                    <p class="tagline">Advise freely, covered.</p>
+                    <button class="buy-now-btn" onclick="event.preventDefault(); event.stopPropagation(); location.href='buynow/bnconsultant.html'">Buy Now</button>
                 </div>
-                <h3 class="category">Consultant Liability</h3>
-                <p class="tagline">Fly high, insured.</p>
-                <button class="buy-now-btn">Buy Now</button>
-            </div>
+            </a>
         </div>
     </section>
-    </div>
+</div>
 
-    <section class="homeowners-section">
-        <h2>Homeowners Insurance</h2>
-        <div class="card-container">
+<section class="homeowners-section">
+    <h2>Homeowners Insurance</h2>
+    <div class="card-container">
+        <a href="services/home.html" class="card-link">
             <div class="card">
                 <div class="icon-circle">
                     <img src="/images/home.png" alt="Home">
                 </div>
                 <h3 class="category">Home</h3>
-                <p class="tagline">Hit the road, insured.</p>
-                <button class="buy-now-btn">Buy Now</button>
+                <p class="tagline">Home secured, peace assured.</p>
+                <button class="buy-now-btn" onclick="event.preventDefault(); event.stopPropagation(); location.href='buynow/bnhome.html'">Buy Now</button>
             </div>
+        </a>
+        <a href="services/condo.html" class="card-link">
             <div class="card">
                 <div class="icon-circle">
                     <img src="images/condo.png" alt="Condo">
                 </div>
                 <h3 class="category">Condo</h3>
-                <p class="tagline">Ride on, insured.</p>
-                <button class="buy-now-btn">Buy Now</button>
+                <p class="tagline">Condo protected, peace assured.</p>
+                <button class="buy-now-btn" onclick="event.preventDefault(); event.stopPropagation(); location.href='buynow/bncondo.html'">Buy Now</button>
             </div>
+        </a>
+        <a href="services/renters.html" class="card-link">
             <div class="card">
                 <div class="icon-circle">
                     <img src="images/renters.png" alt="Renters">
                 </div>
                 <h3 class="category">Renters</h3>
-                <p class="tagline">Full on fuel, full on coverage!</p>
-                <button class="buy-now-btn">Buy Now</button>
+                <p class="tagline">Rent worry-free, covered completely.</p>
+                <button class="buy-now-btn" onclick="event.preventDefault(); event.stopPropagation(); location.href='buynow/bnrenters.html'">Buy Now</button>
+            </div>
+        </a>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section about">
+            <h3>About Coverly</h3>
+            <p>Coverly Insurance Company offers comprehensive coverage options to protect what matters most to you. Our mission is to provide reliable, affordable, and personalized insurance solutions.</p>
+        </div>
+
+        <div class="footer-section links">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section contact">
+            <h4>Contact Us</h4>
+            <p>Email: support@coverly.com</p>
+            <p>Phone: +961 76 542-112</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
-    </section>
+    </div>
 
-    <div class="background-container">
-    <section class="cyber-section">
-        <h2>Cyber Insurance</h2>
-        <div class="card-container">
-            <div class="card">
-                <div class="icon-circle">
-                    <img src="images/data.png" alt="Data Breach">
-                </div>
-                <h3 class="category">Data Breach</h3>
-                <p class="tagline">Hit the road, insured.</p>
-                <button class="buy-now-btn">Buy Now</button>
-            </div>
-            <div class="card">
-                <div class="icon-circle">
-                    <img src="images/privacy.png" alt="Privacy Liability">
-                </div>
-                <h3 class="category">Privacy Liability</h3>
-                <p class="tagline">Ride on, insured.</p>
-                <button class="buy-now-btn">Buy Now</button>
-            </div>
-            <div class="card">
-                <div class="icon-circle">
-                    <img src="images/network.png" alt="Network Security">
-                </div>
-                <h3 class="category">Network Security</h3>
-                <p class="tagline">Full on fuel, full on coverage!</p>
-                <button class="buy-now-btn">Buy Now</button>
-            </div>
-        </div>
-    </section>
+    <div class="footer-bottom">
+        &copy; 2024 Coverly | All rights reserved.
+    </div>
+</footer>
 
-    <script>
-        function toggleMenu() {
-            const navLinks = document.getElementById('nav-links');
-            navLinks.classList.toggle('active');
-        }
-    </script>
+<script>
+    function toggleMenu() {
+        const navLinks = document.getElementById("nav-links");
+        const hamburger = document.querySelector(".hamburger");
+        const overlay = document.getElementById("overlay");
+        navLinks.classList.toggle("active");
+        hamburger.classList.toggle("active");
+        overlay.classList.toggle("active");
+        document.body.classList.toggle("menu-active");
+
+        // Update aria-expanded for accessibility
+        const isExpanded = hamburger.classList.contains("active");
+        hamburger.setAttribute("aria-expanded", isExpanded);
+    }
+
+    // Close menu when a navigation link is clicked
+    document.querySelectorAll('#nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            const navLinks = document.getElementById("nav-links");
+            const hamburger = document.querySelector(".hamburger");
+            const overlay = document.getElementById("overlay");
+            navLinks.classList.remove("active");
+            hamburger.classList.remove("active");
+            overlay.classList.remove("active");
+            document.body.classList.remove("menu-active");
+        });
+    });
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Vault</title>    
+    <link rel="stylesheet" href="service.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<section class="navbar">
+    <!-- Logo is now clickable, linking back to home page -->
+    <a href="../index.html">
+        <img src="/images/coverlylogo1.png" class="logo" alt="Vault Logo">
+    </a>
+    <div class="hamburger" onclick="toggleMenu()">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+    <ul id="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../services.html">Services</a></li>
+        <li><a href="../aboutus.html">About Us</a></li>
+        <li class="account-link">
+            <a href="../account.html" class="account-icon">
+                <i class="fas fa-user-alt"></i>
+            </a>
+        </li>
+    </ul>
+</section>
+
+<div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+
+<section class="header-section">
+        <div class="header-icon">
+            <img src="/images/travel-icon.png" alt="travel">
+        </div>
+        <h1>Travel safe, covered always.</h1>
+        <div>
+            <button class="buy" onclick="location.href='../buynow/bntravel.html'">Buy This Product</button>
+        </div>
+    </section>
+
+    <div class="background-container">
+    
+        <section class="coverage-section">
+            <h2>We've got you covered</h2>
+            <div class="coverage-cards">
+                <div class="coverage-card">
+                    <div class="icon-circle">
+                        <img src="/images/travel/accident.png" alt="Accidents">
+                    </div>
+                    <p class="tagline">From minor mishaps to major incidents, you're protected on every adventure.</p>
+                </div>
+                <div class="coverage-card">
+                    <div class="icon-circle">
+                        <img src="/images/travel/cancel.png" alt="Cancel">
+                    </div>
+                    <p class="tagline">Plans change? We cover unexpected cancellations and delays.</p>
+                </div>
+                <div class="coverage-card">
+                    <div class="icon-circle">
+                        <img src="/images/travel/luggage.png" alt="Luggage">
+                    </div>
+                    <p class="tagline">Lost or delayed bags? We'll cover essentials until you're reunited.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="detailed-coverage">
+            <h2>What's covered</h2>
+            <div class="coverage-details">
+                <div class="coverage-item">
+                    <div class="icon-circle">
+                        <img src="/images/travel/accident.png" alt="Accidents">
+                    </div>
+                    <h3>Never Alone Abroad</h3>
+                    <p class="tagline">Rely on us for your medical coverage.</p>
+                    <p class="limit">Up to $100,000 per case</p>
+                </div>
+                <div class="coverage-item">
+                    <div class="icon-circle">
+                        <img src="/images/travel/cancel.png" alt="Cancel">
+                    </div>
+                    <h3>Trip Canceled? No Problem</h3>
+                    <p class="tagline">We've got cancellations and emergencies.</p>
+                    <p class="limit">Up to $1,000 per case</p>
+                </div>
+                <div class="coverage-item">
+                    <div class="icon-circle">
+                        <img src="/images/travel/luggage.png" alt="Luggage">
+                    </div>
+                    <h3>Covered for Losses</h3>
+                    <p class="tagline">Luggage, electronics, valuables protected.</p>
+                    <p class="limit">Up to $1,000 per case</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="suitability">
+            <h2>Is it for you?</h2>
+            <div class="suitability-cards">
+                <div class="suitability-card">
+                    <div class="icon-circle">
+                        <img src="/images/travel/family.png" alt="Family">
+                    </div>
+                    <p class="tagline">You're covered for every family visit abroad.</p>
+                </div>
+                <div class="suitability-card">
+                    <div class="icon-circle">
+                        <img src="/images/travel/beach.png" alt="Beach">
+                    </div>
+                    <p class="tagline">You're mapping out a summer trip while winter's still here.</p>
+                </div>
+                <div class="suitability-card">
+                    <div class="icon-circle">
+                        <img src="/images/travel/party.png" alt="Party">
+                    </div>
+                    <p class="tagline">Your inner party animal comes alive abroad.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-products">
+            <h2>Other products you may like to see</h2>
+            <div class="related-product">
+                <div class="icon-circle-2">
+                    <img src="/images/dental.png" alt="Dental">
+                </div>
+                <div class="product-details">
+                    <h3 class="category">Dental</h3>
+                    <p class="tagline">Smile wide, covered.</p>
+                </div>
+                <button class="buy-now-btn">Buy Now</button>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>About Coverly</h3>
+                <p>Coverly Insurance Company offers comprehensive coverage options to protect what matters most to you. Our mission is to provide reliable, affordable, and personalized insurance solutions.</p>
+            </div>
+    
+            <div class="footer-section links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../services.html">Services</a></li>
+                    <li><a href="../aboutus.html">About Us</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-section contact">
+                <h4>Contact Us</h4>
+                <p>Email: support@coverly.com</p>
+                <p>Phone: +961 76 542-112</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            &copy; 2024 Coverly | All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById("nav-links");
+            const hamburger = document.querySelector(".hamburger");
+            const overlay = document.getElementById("overlay");
+            navLinks.classList.toggle("active");
+            hamburger.classList.toggle("active");
+            overlay.classList.toggle("active");
+            document.body.classList.toggle("menu-active");
+
+            // Update aria-expanded for accessibility
+            const isExpanded = hamburger.classList.contains("active");
+            hamburger.setAttribute("aria-expanded", isExpanded);
+        }
+
+        // Close menu when a navigation link is clicked
+        document.querySelectorAll('#nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                const navLinks = document.getElementById("nav-links");
+                const hamburger = document.querySelector(".hamburger");
+                const overlay = document.getElementById("overlay");
+                navLinks.classList.remove("active");
+                hamburger.classList.remove("active");
+                overlay.classList.remove("active");
+                document.body.classList.remove("menu-active");
+            });
+        });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

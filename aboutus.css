@@ -4,129 +4,105 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
 }
 
 body {
-    background-color: #bcdce6 !important;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
     font-family: 'Poppins', sans-serif;
+    background-color: #bcdce6 !important;
+    color: #333;
 }
 
+h1, h2, h3, h4, h5, h6, p, a, li, span {
+    font-family: 'Outfit', sans-serif;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+
+/* Navbar */
 .navbar {
-    width: 95%;
-    margin: auto;
-    padding: 1%;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
-    z-index: 10;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #bcdce6;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative; /* Make navbar fixed to the top */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure navbar is above other elements */
 }
 
-.navbar ul {
-    margin-left: auto;
+.navbar .logo {
+    width: 85px;
+    height: auto;
 }
 
-.logo {
-    width: 80px;
-    cursor: pointer;
+.navbar #nav-links {
+    display: flex;
+    list-style: none;
 }
 
-.hamburger {
+.navbar #nav-links li {
+    margin: 0 15px;
+}
+
+.navbar #nav-links a {
+    color: #333;
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar #nav-links a:hover {
+    color: #6ba3b3;
+}
+
+.navbar .hamburger {
     display: none;
-    flex-direction: column;
     cursor: pointer;
+    flex-direction: column;
+    gap: 4px;
 }
 
-.hamburger .line {
+.navbar .hamburger .line {
     width: 25px;
     height: 3px;
-    background-color: #000;
-    margin: 4px 0;
+    background-color: #333;
+    transition: all 0.3s ease;
 }
 
-#nav-links {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    list-style: none;
-    transition: max-height 0.3s ease;
-    max-height: none;
+/* Hamburger Animation */
+.navbar .hamburger.active .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
 }
 
-#nav-links.active {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background-color: #bcdce6;
-    padding: 20px 0;
-    z-index: 999;
+.navbar .hamburger.active .line:nth-child(2) {
+    opacity: 0;
 }
 
-.navbar ul li {
-    margin: 0 15px;
-    position: relative;
-    font-weight: 500;
-    font-size: 1.1rem;
+.navbar .hamburger.active .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
 }
 
-.navbar ul li a {
-    text-decoration: none;
-    color: #000;
-    text-transform: uppercase;
-    position: relative;
-}
-
-.navbar ul li::after {
-    content: '';
-    height: 2px;
-    width: 0;
-    background: #303030;
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-    transition: 0.5s;
-}
-
-.navbar ul li:hover::after {
-    width: 100%;
-}
-
-@media (max-width: 768px) {
-    .hamburger {
-        display: flex;
-    }
-
-    #nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: #bcdce6;
-        padding: 10px 0;
-    }
-
-    #nav-links.active {
-        display: flex;
-    }
-
-    .navbar ul li {
-        margin: 10px 0;
-    }
-
-    .account-link {
-        display: block;
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    .account-icon {
-        margin: 0 auto;
-    }
+.navbar .account-link a {
+    font-size: 20px;
 }
 
 .account-icon {
@@ -141,7 +117,6 @@ body {
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    margin-left: 20px;
     transition: all 0.3s ease;
 }
 
@@ -159,10 +134,71 @@ body {
     display: none;
 }
 
+@media (max-width: 768px) {
+    .navbar #nav-links {
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 40%;
+        background-color: #bcdce6;
+        padding-top: 80px; /* Space for navbar */
+        padding-left: 20px;
+        padding-right: 20px;
+        box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+        transition: right 0.3s ease-in-out;
+        z-index: 998;
+    }
+
+    /* When #nav-links is active, show it */
+    #nav-links.active {
+        right: 0;
+        display: flex;
+    }
+
+    .navbar #nav-links li a {
+        color: #fff;
+        font-size: 18px;
+        margin: 50px 0;
+        text-transform: uppercase;
+    }
+
+    .navbar #nav-links li a:hover {
+        color: #6ba3b3;
+    }
+
+    .navbar .hamburger {
+        display: flex;
+    }
+
+    /* Prevent scrolling when menu is active */
+    body.menu-active {
+        overflow: hidden;
+    }
+}
+
+/* Overlay Styles */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 997;
+    transition: opacity 0.3s ease;
+}
+
+.overlay.active {
+    display: block;
+}
+
 .hero {
     text-align: center;
     width: 100%;
-    padding: 100px 20px;
+    padding: 190px 20px;
     background-color: #bcdce6;
 }
 
@@ -202,58 +238,67 @@ h1 {
 .white-section {
     background-color: #ffffff;
     padding: 100px 20px;
-    width: 100%;
-    text-align: center;
-}
-
-.white-section h2 {
-    font-size: 2.5rem;
-    color: #303030;
-    font-family: 'Outfit', serif;
-    margin-bottom: 20px;
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between text and image */
+    align-items: center; /* Align items vertically */
+    flex-wrap: wrap; /* Wrap on smaller screens */
+    gap: 20px; /* Space between items */
+    text-align: left; /* Align text to the left */
+    margin-top: -75px;
 }
 
 .white-section-text {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 200px;
+    width: 100%;
+    max-width: 1700px;
     flex-wrap: wrap;
+    gap: 50px;
 }
 
-.white-section-text h2 {
-    font-size: 1.8rem;
+.white-section h2 {
+    font-size: 2rem; /* Adjust size for better appearance */
+    margin-bottom: 10px; /* Add spacing below heading */
     color: #303030;
-    margin: 0;
-    text-align: left;
 }
 
 .white-section-text p {
-    font-size: 1.2rem;
+    font-size: 1.2rem; /* Maintain paragraph size */
     color: #606060;
-    margin: 0;
-    max-width: 600px;
-    text-align: left;
+    line-height: 1.6; /* Improve readability */
+    padding: 0 200px;
 }
 
-.white-section-content {
+.white-mockup {
+    flex: 1; /* Allow image to take up available space */
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    gap: 450px;
-}
-
-.mission-image {
-    width: 350px;
-    height: auto;
-    border-radius: 10px;
+    align-items: center;
 }
 
 .insurance-img {
-    width: 400px;
+    width: 70%;
+    max-width: 480px;
     height: auto;
-    margin-top: -150px;
-    margin-bottom: -50px;
+}
+
+/* Responsive Adjustments for Smaller Screens */
+@media (max-width: 768px) {
+    .white-section {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center align items */
+        text-align: center; /* Center-align text */
+    }
+
+    .white-section-text {
+        max-width: 100%; /* Full width on small screens */
+        text-align: center; /* Center text */
+    }
+
+    .white-mockup {
+        margin-top: 20px; /* Add spacing above image */
+    }
 }
 
 .why-coverly {
@@ -286,7 +331,8 @@ h1 {
 }
 
 .mockup-img {
-    width: 480px;
+    width: 100%;
+    max-width: 480px;
     height: auto;
 }
 
@@ -315,6 +361,7 @@ h1 {
     margin: 0;
 }
 
+/* Mission Section */
 .mission-section {
     background-color: #f9f9f9;
     padding: 60px 20px;
@@ -345,62 +392,98 @@ h1 {
 }
 
 .mission-section img {
-    width: 400px;
+    width: 100%;
     max-width: 600px;
+    height: auto;
     margin-top: 30px;
     border-radius: 8px;
 }
 
-.mission-img {
-    width: 100%;
-    max-width: 550px;
-    margin-top: 20px;
-    border-radius: 12px;
+/* Footer Section */
+.footer {
+    background-color: #fafdfd;
+    color: #000;
+    padding: 20px 0;
+    text-align: center;
 }
 
-@media (max-width: 1200px) {
-    .white-section-text {
-        gap: 100px;
-    }
-    
-    .insurance-img{
-        margin-top: -80px;
-    }
-    .white-section-content {
-        gap: 100px;
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 150px;
+    margin: 5px 10px;
+}
+
+.footer-section h3, .footer-section h4 {
+    font-family: Outfit, sans-serif;
+    font-size: 1.5rem !important;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    font-family: Poppins, sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 8px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    font-size: 1rem;
+    color: #000;
+}
+
+.footer-section .social-icons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.footer-section .social-icons a {
+    font-size: 1.3rem;
+    color: #000;
+    text-decoration: none;
+}
+
+.footer-section .social-icons a:hover {
+    color: #6ba3b3;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
     }
 
     .why-coverly-content {
-        gap: 30px;
-    }
-}
-
-@media (max-width: 992px) {
-    .why-coverly-content {
         flex-direction: column;
-        align-items: flex-start;
-    }
-}
-
-@media (max-width: 576px) {
-    h1, h2, h3 {
-        font-size: 2rem;
+        align-items: center;
+        text-align: center; /* Center the text */
     }
 
-    .white-section-text p, .why-coverly-content p, .mission-section p {
-        font-size: 1rem;
+    .mockup-content {
+        margin-top: 20px; /* Add spacing between text and image */
     }
 
-    .mockup-img, .insurance-img, .mission-img {
-        width: 100%;
-    }
-
-    .why-coverly-content h2, .why-coverly-content h3 {
-        text-align: center;
-    }
-
-    .white-section-content {
-        flex-direction: column;
-        gap: 50px;
+    .mockup-img {
+        max-width: 100%; /* Ensure the image scales properly */
+        height: auto; /* Maintain aspect ratio */
     }
 }
